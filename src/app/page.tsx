@@ -41,7 +41,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-primary mb-6">Our Approach to Mental Wellness</h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto mb-12">
-            At Slate & Chalk MindCare, we believe in a compassionate, evidence-based approach to mental health. We tailor our therapies to meet your unique needs, fostering a safe and supportive environment for growth and healing.
+            At Slate & Chalk MindCare, we believe in a compassionate, evidence-based approach to mental health. We tailor our therapies to meet your child's unique needs, fostering a safe and supportive environment for growth and healing.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="shadow-lg hover:shadow-xl transition-shadow">
@@ -53,7 +53,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Every individual is unique. We create personalized treatment plans that address your specific concerns and goals.
+                  Every child is unique. We create personalized treatment plans that address your specific concerns and goals.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -66,7 +66,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Our team consists of highly qualified and experienced psychologists and counselors dedicated to your well-being.
+                  Our team consists of highly qualified and experienced psychologists and counselors dedicated to your child's well-being.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -79,7 +79,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  We provide a safe, confidential, and non-judgmental space for you to explore your thoughts and feelings.
+                  We provide a safe, confidential, and non-judgmental space for your child to explore their thoughts and feelings.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -104,7 +104,7 @@ export default function HomePage() {
             <div className="md:w-1/2">
               <h2 className="text-4xl font-bold text-primary mb-6">Comprehensive Services</h2>
               <p className="text-lg text-foreground mb-8">
-                We offer a range of services to support your mental health, including individual therapy, couples counseling, family therapy, and specialized workshops. Our goal is to equip you with the tools and insights needed for lasting positive change.
+                We offer a range of services to support your child's mental health, including individual therapy, parent counseling, family therapy, and specialized workshops. Our goal is to equip your child with the tools and insights needed for lasting positive change.
               </p>
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href="/services">Learn More About Our Services <ArrowRight className="ml-2 h-5 w-5" /></Link>
