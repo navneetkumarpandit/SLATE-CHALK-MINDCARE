@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Brain, Users, Heart, Smile } from "lucide-react";
 
+
 const services = [
   {
     icon: Brain,
@@ -42,45 +43,31 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      <section className="grid md:grid-cols-1 gap-12">
-        <Card key="individual-therapy" className="flex flex-col md:flex-row overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-        {services.map((service, index) => (
-          <Card key={service.title} className={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} overflow-hidden shadow-lg hover:shadow-xl transition-shadow`}>
-            <div className="md:w-1/2 h-64 md:h-auto relative">
-              <Image
-                src={service.imgSrc}
-                alt={service.title}
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint={service.aiHint}
-              />
+      {services.map((service, index) => (
+        <section key={service.title} className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8 md:gap-12 mb-16`}>
+          <div className="md:w-1/2 w-full">
+            <h2 className="text-4xl font-bold text-primary mb-4 flex items-center">
+              <service.icon className="h-8 w-8 text-primary mr-3" />
+              {service.title}
+            </h2>
+            <p className="text-lg text-foreground leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full">
+            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+              <Image src={service.imgSrc} alt={service.title} layout="fill" objectFit="cover" data-ai-hint={service.aiHint} />
             </div>
-            <div className="md:w-1/2">
-              <CardHeader>
-                <div className="flex items-center mb-3">
-                  <service.icon className="h-10 w-10 text-primary mr-4" />
-                  <CardTitle className="text-3xl text-primary">{service.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-lg text-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </div>
-          </Card>
-        ))}
-        </Card>
-      </section>
+          </div>
+        </section>
+      ))}
 
+      {/* Contact section */}
       <section className="mt-16 text-center">
-        <h2 className="text-3xl font-bold text-primary mb-4">Ready to Find the Right Support?</h2>
-        <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-          Contact us today to discuss your child's needs and find out how our services can help you or your loved ones.
+        <h2 className="text-4xl font-bold text-primary mb-4">Get in Touch</h2>
+        <p className="text-xl text-foreground max-w-3xl mx-auto">
+          Ready to take the next step? Contact us today to learn more about how we can support your child.
         </p>
-        <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-accent-foreground bg-accent hover:bg-accent/90">
-          Schedule a Consultation
-        </a>
       </section>
     </div>
   );

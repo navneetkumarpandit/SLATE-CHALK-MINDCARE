@@ -13,7 +13,7 @@ const TermsOfServicePage = () => {
 
         <h2 id="description-of-services">Description of Services</h2>
         <p>
-          SLATE & CHALK MINDCARE provides psychological care and counseling services. The specific services offered are described on our website.
+          SLATENCHALK MINDCARE provides psychological care and counseling services. The specific services offered are described on our website.
         </p>
 
         <h2>User Responsibilities</h2>
