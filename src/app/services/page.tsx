@@ -6,28 +6,28 @@ const services = [
   {
     icon: Brain,
     title: "Individual Therapy",
-    description: "Personalized one-on-one sessions to address a wide range of mental health concerns, including anxiety, depression, trauma, and stress management.",
+    description: "Personalized one-on-one therapy for children to help them express emotions, manage challenges, and build healthy coping skills through age-appropriate techniques like play, art, and talk.",
     imgSrc: "https://picsum.photos/seed/service1/600/400",
     aiHint: "kids learning",
   },
   {
     icon: Users,
-    title: "Couples Counseling",
-    description: "Support for couples seeking to improve communication, resolve conflicts, and strengthen their relationship in a constructive environment.",
+    title: "Parent Counseling",
+    description: "We offer parent counseling to support and guide caregivers through the challenges of raising children. These sessions help parents understand their child’s behavior, improve communication, manage stress, and create a positive, nurturing home environment.",
     imgSrc: "https://picsum.photos/seed/service2/600/400",
     aiHint: "children sharing",
   },
   {
     icon: Heart,
-    title: "Family Therapy",
-    description: "Guidance for families to navigate challenges, improve dynamics, and foster healthier relationships among members.",
+    title: "Family Counseling",
+    description: "We offer family counseling focused on the child’s well-being, helping families understand how their dynamics impact the child’s emotional and behavioral health. These sessions support better communication, reduce conflicts, and create a more supportive environment for the child to thrive.",
     imgSrc: "https://picsum.photos/seed/service3/600/400",
     aiHint: "happy family drawing",
   },
   {
     icon: Smile,
     title: "Child & Adolescent Counseling",
-    description: "Specialized therapy for children and teenagers dealing with emotional, behavioral, or developmental issues, provided in an age-appropriate manner.",
+    description: "We provide counseling for children and adolescents to support their emotional, social, and psychological development. Through age-appropriate methods, we help them navigate issues like anxiety, peer pressure, behavioral concerns, academic stress, and identity challenges—empowering them to grow with confidence and resilience.",
     imgSrc: "https://picsum.photos/seed/service4/600/400",
     aiHint: "child with toys",
   },
@@ -39,7 +39,7 @@ export default function ServicesPage() {
       <section className="text-center mb-16">
         <h1 className="text-5xl font-bold text-primary mb-4">Our Services</h1>
         <p className="text-xl text-foreground max-w-3xl mx-auto">
-          We offer a comprehensive range of psychological services tailored to meet your unique needs and support your journey towards mental wellness.
+          We offer a comprehensive range of counselling services tailored to meet your child's unique needs and support their journey towards mental wellness.
         </p>
       </section>
 

@@ -80,11 +80,11 @@ export default function ContactPage() {
             <CardContent className="space-y-4">
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 text-accent mr-3 shrink-0" />
-                <p className="text-foreground">123 Wellness Lane, Mindful City, ST 12345</p>
+                <p className="text-foreground">Mumbai,Maharashtra</p>
               </div>
               <div className="flex items-center">
                 <Phone className="h-6 w-6 text-accent mr-3 shrink-0" />
-                <p className="text-foreground">(123) 456-7890</p>
+                <p className="text-foreground"> +91 (993) 090-8294</p>
               </div>
               <div className="flex items-center">
                 <Mail className="h-6 w-6 text-accent mr-3 shrink-0" />
