@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Users, Heart, Smile } from "lucide-react";
 
 const services = [
@@ -44,6 +43,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="grid md:grid-cols-1 gap-12">
+        <Card key="individual-therapy" className="flex flex-col md:flex-row overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
         {services.map((service, index) => (
           <Card key={service.title} className={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} overflow-hidden shadow-lg hover:shadow-xl transition-shadow`}>
             <div className="md:w-1/2 h-64 md:h-auto relative">
@@ -70,12 +70,13 @@ export default function ServicesPage() {
             </div>
           </Card>
         ))}
+        </Card>
       </section>
 
       <section className="mt-16 text-center">
         <h2 className="text-3xl font-bold text-primary mb-4">Ready to Find the Right Support?</h2>
         <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-          Contact us today to discuss your needs and find out how our services can help you or your loved ones.
+          Contact us today to discuss your child's needs and find out how our services can help you or your loved ones.
         </p>
         <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-accent-foreground bg-accent hover:bg-accent/90">
           Schedule a Consultation

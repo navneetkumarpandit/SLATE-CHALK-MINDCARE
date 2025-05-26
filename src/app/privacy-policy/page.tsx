@@ -7,7 +7,7 @@ const PrivacyPolicyPage = () => {
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
       <div className="prose max-w-none">
         <p>
-          This Privacy Policy describes how SLATE & CHALK MINDCARE collects, uses, and discloses your personal information when you visit or use our website and services.
+          This Privacy Policy describes how Slatenchalk MINDCARE collects, uses, and discloses your personal information when you visit or use our website and services.
         </p>
         <h2>Information We Collect</h2>
         <p>

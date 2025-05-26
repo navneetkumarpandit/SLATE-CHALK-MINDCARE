@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Slate & Chalk MindCare',
+  title: 'Slatenchalk MindCare',
   description: 'Nurturing minds, fostering well-being. Expert psychological care and counseling services.',
 };
 

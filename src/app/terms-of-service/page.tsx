@@ -6,12 +6,12 @@ const TermsOfServicePage = () => {
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
       <div className="prose max-w-none">
-        <h2>Agreement to Terms</h2>
+        <h2 id="agreement-to-terms">Agreement to Terms</h2>
         <p>
-          By accessing or using the website and services of SLATE & CHALK MINDCARE, you agree to be bound by these Terms of Service.
+          By accessing or using the website and services of SLATENCHALK MINDCARE, you agree to be bound by these Terms of Service.
         </p>
 
-        <h2>Description of Services</h2>
+        <h2 id="description-of-services">Description of Services</h2>
         <p>
           SLATE & CHALK MINDCARE provides psychological care and counseling services. The specific services offered are described on our website.
         </p>
@@ -31,7 +31,7 @@ const TermsOfServicePage = () => {
 
         <h2>Limitation of Liability</h2>
         <p>
-          In no event shall SLATE & CHALK MINDCARE be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use of our website or services.
+          In no event shall SLATENCHALK MINDCARE be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use of our website or services.
         </p>
 
         <h2>Governing Law</h2>

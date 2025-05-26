@@ -17,7 +17,7 @@ export async function Header() {
         <Link href="/" className="flex items-center ml-12"> {/* Added ml-12 to move logo to the right */}
           <Image
             src="/images/SlatenChalk@1x.svg"
-            alt="Slate & Chalk MindCare Logo"
+            alt="Slatenchalk MindCare Logo"
             width={86} // Increased from 75 (75 * 1.15 = 86.25)
             height={29} // Increased from 25 (25 * 1.15 = 28.75)
             // className="mr-3" // Removed mr-3 as it's not affecting external spacing and no text is next to it

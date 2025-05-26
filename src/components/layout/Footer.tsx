@@ -43,7 +43,7 @@ export function Footer() {
             <Link href="/">
               <Image
                 src="/images/SlatenChalk@1x.svg"
-                alt="Slate & Chalk MindCare Logo"
+                alt="Slatenchalk MindCare Logo"
                 width={150} 
                 height={50}
                 className="mb-2"
@@ -133,10 +133,10 @@ export function Footer() {
 
       <div className="container mx-auto px-4 mt-8 text-center text-sm text-muted-foreground">
         {isClient && currentYear ? (
-          `© ${currentYear} SLATE & CHALK MINDCARE. All rights reserved.`
+          `© ${currentYear} Slatenchalk Mindcare. All rights reserved.`
         ) : (
           // Fallback for server render and initial client render before currentYear is set
-          `© SLATE & CHALK MINDCARE. All rights reserved.`
+          `© Slatenchalk Mindcare. All rights reserved.`
         )}
       </div>
     </footer>

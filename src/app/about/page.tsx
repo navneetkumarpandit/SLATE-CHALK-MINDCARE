@@ -5,10 +5,10 @@ import { Users, Target, HeartHandshake, CheckCircle } from "lucide-react";
 export default function AboutPage() {
   return (
     <div className="container mx-auto py-12 md:py-20">
-      <section className="text-center mb-16">
+      <section className="text-center mb-16" data-ai-hint="hero section with title and description">
         <h1 className="text-5xl font-bold text-primary mb-4">About Slate & Chalk MindCare</h1>
         <p className="text-xl text-foreground max-w-3xl mx-auto">
-          Dedicated to providing compassionate and effective psychological care to help you navigate life's challenges and achieve mental well-being.
+          Dedicated to providing specialized mental health services designed to help children understand their emotions, manage challenges, and build resilience in a safe and nurturing environment.
         </p>
       </section>
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
           <div className="md:w-1/2">
             <h2 className="text-4xl font-bold text-primary mb-6">Our Story</h2>
             <p className="text-lg text-foreground mb-4">
-              Slate & Chalk MindCare was founded with a simple yet profound vision: to create a sanctuary for mental healing and growth. We understand that seeking help is a courageous step, and we are here to support you with empathy, professionalism, and evidence-based practices.
+              Slatenchalk MindCare was founded with a simple yet profound vision: to create a sanctuary for mental healing and growth. We understand that seeking help is a courageous step, and we are here to support you with empathy, professionalism, and evidence-based practices.
             </p>
             <p className="text-lg text-foreground">
               Our name reflects our philosophy: 'Slate' for the fresh start and new perspectives we help uncover, and 'Chalk' for the gentle guidance and tools we provide to help you write your own story of resilience and well-being.
