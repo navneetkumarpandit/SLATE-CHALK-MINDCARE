@@ -23,7 +23,7 @@ export default function HomePage() {
             Nurturing Minds, <br />Fostering Well-being
           </h1>
           <p className="text-lg md:text-xl text-foreground mb-8 max-w-2xl mx-auto">
-            Slate & Chalk MindCare offers expert psychological care and counseling services designed to support your mental health journey.
+            Slate & Chalk MindCare offers expert psychological care and counseling services designed to support your child's mental health journey.
           </p>
           <div className="space-x-4">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
