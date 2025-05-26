@@ -82,7 +82,7 @@ export function Footer() {
             {isClient && socialLinks?.linkedin && socialLinks.linkedin.trim() && (
               <li>
                 <a
-                  href={socialLinks.linkedin}
+                  href="https://www.linkedin.com/in/slatenchalk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -94,7 +94,7 @@ export function Footer() {
             {isClient && socialLinks?.instagram && socialLinks.instagram.trim() && (
               <li>
                 <a
-                  href={socialLinks.instagram}
+                  href="https://www.instagram.com/slatenchalk_mindcare/?igsh=MThuMzc2dXBlN25lMQ%3D%3D#"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -106,7 +106,7 @@ export function Footer() {
             {isClient && socialLinks?.facebook && socialLinks.facebook.trim() && (
               <li>
                 <a
-                  href={socialLinks.facebook}
+                  href="https://www.facebook.com/share/1BZNzrqENS/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
