@@ -7,14 +7,14 @@ const services = [
     icon: Brain,
     title: "Individual Therapy",
     description: "Personalized one-on-one therapy for children to help them express emotions, manage challenges, and build healthy coping skills through age-appropriate techniques like play, art, and talk.",
-    imgSrc: "/images/child and adolance.png",
+    imgSrc: "/images/individual.png",
     aiHint: "kids learning",
   },
   {
     icon: Users,
     title: "Parent Counseling",
     description: "We offer parent counseling to support and guide caregivers through the challenges of raising children. These sessions help parents understand their child’s behavior, improve communication, manage stress, and create a positive, nurturing home environment.",
-    imgSrc: "https://picsum.photos/seed/service2/600/400",
+    imgSrc: "/images/parent.png",
     aiHint: "children sharing",
   },
   {
