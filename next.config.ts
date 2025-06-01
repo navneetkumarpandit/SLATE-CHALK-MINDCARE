@@ -1,7 +1,7 @@
 
 import type {NextConfig} from 'next';
 
-const nextConfig: NextConfig = {
+export const nextConfig: NextConfig = {
   /* config options here */
   typescript: {
     // !! WARN !!
@@ -18,12 +18,7 @@ const nextConfig: NextConfig = {
   images: {
     // Configure allowed remote image domains and local serving
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**', // Allow any path on picsum.photos
-      },
+
        // Add localhost if you serve uploaded images locally during development
        // Note: For production, use a proper CDN or cloud storage and add its hostname.
       // {
@@ -40,5 +35,3 @@ const nextConfig: NextConfig = {
    // Ensure environment variables like NEXT_PUBLIC_APP_URL, ADMIN_EMAIL, ADMIN_PASSWORD
    // are accessible (e.g., defined in .env.local)
 };
-
-export default nextConfig;

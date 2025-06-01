@@ -6,7 +6,6 @@ import { NavLink } from './NavLink';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, LogIn, LogOut, Settings, PlusCircle, MessageSquareQuote, List } from 'lucide-react';
-import { LogoutButton } from './LogoutButton';
 import Image from 'next/image'; // Import Image for mobile menu logo
 
 const navItems = [
@@ -64,32 +63,9 @@ export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
             )}
         </nav>
 
-             {/* Auth Buttons - Desktop */}
-             <div className="hidden md:flex items-center space-x-2">
-               {isLoggedIn ? (
-                    <LogoutButton />
-                ) : (
-                    <Button asChild variant="ghost">
-                        <Link href="/login">
-                            <LogIn className="mr-2 h-4 w-4" /> Login
-                        </Link>
-                    </Button>
-               )}
-             </div>
-
             {/* Mobile Navigation */}
             <div className="md:hidden flex items-center space-x-2">
                {/* Auth Buttons - Mobile (before Sheet trigger for layout) */}
-               {isLoggedIn ? (
-                  <LogoutButton size="icon" variant="outline" className="h-8 w-8"/>
-               ) : (
-                 <Button asChild variant="ghost" size="icon" className="h-8 w-8">
-                     <Link href="/login">
-                         <LogIn className="h-4 w-4" />
-                          <span className="sr-only">Login</span>
-                     </Link>
-                 </Button>
-               )}
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="icon" className="h-8 w-8">

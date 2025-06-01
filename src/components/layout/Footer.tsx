@@ -4,35 +4,11 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import type { SocialLinks, AppSettings } from '@/lib/types';
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
-  const [socialLinks, setSocialLinks] = useState<SocialLinks | null>(null);
   const [isClient, setIsClient] = useState(false); // To track if component has mounted
-
-  useEffect(() => {
-    setIsClient(true); // Set to true after component mounts on client
-    setCurrentYear(new Date().getFullYear());
-
-    const fetchSocialLinks = async () => {
-      try {
-        const response = await fetch('/api/settings'); // Updated API endpoint
-        if (response.ok) {
-          const data: AppSettings = await response.json();
-          if (data.socialLinks) {
-            setSocialLinks(data.socialLinks);
-          }
-        } else {
-          console.error('Failed to fetch social media links for footer');
-        }
-      } catch (error) {
-        console.error('Error fetching social media links for footer:', error);
-      }
-    };
-
-    fetchSocialLinks();
-  }, []);
+  useEffect(() => { setIsClient(true); setCurrentYear(new Date().getFullYear()); }, []);
 
   return (
     <footer className="bg-gray-100 py-12">
@@ -78,7 +54,7 @@ export function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-4">Connect</h3>
           <ul className="space-y-2 text-muted-foreground">
-            {/* Only render social links on the client after mount and if data exists */}
+            {/* Only render social links on the client after mount */}
             {isClient && socialLinks?.linkedin && socialLinks.linkedin.trim() && (
               <li>
                 <a
@@ -115,18 +91,6 @@ export function Footer() {
                 </a>
               </li>
             )}
-            {/* Render a placeholder or nothing if not isClient to match server render */}
-            {!isClient && (
-                <>
-                    {/* You can render empty LIs or a single placeholder LI if you want to reserve space */}
-                    {/* For simplicity, we can render nothing here, and the Login link will be the only initial item */}
-                </>
-            )}
-            <li>
-              <Link href="/login" className="hover:text-primary transition-colors">
-                Login
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
