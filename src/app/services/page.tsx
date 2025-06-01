@@ -7,7 +7,7 @@ const services = [
     icon: Brain,
     title: "Individual Therapy",
     description: "Personalized one-on-one therapy for children to help them express emotions, manage challenges, and build healthy coping skills through age-appropriate techniques like play, art, and talk.",
-    imgSrc: "https://picsum.photos/seed/service1/600/400",
+    imgSrc: "/images/child and adolance.png",
     aiHint: "kids learning",
   },
   {
@@ -21,14 +21,14 @@ const services = [
     icon: Heart,
     title: "Family Counseling",
     description: "We offer family counseling focused on the child’s well-being, helping families understand how their dynamics impact the child’s emotional and behavioral health. These sessions support better communication, reduce conflicts, and create a more supportive environment for the child to thrive.",
-    imgSrc: "https://picsum.photos/seed/service3/600/400",
+    imgSrc: "/images/family.png",
     aiHint: "happy family drawing",
   },
   {
     icon: Smile,
     title: "Child & Adolescent Counseling",
     description: "We provide counseling for children and adolescents to support their emotional, social, and psychological development. Through age-appropriate methods, we help them navigate issues like anxiety, peer pressure, behavioral concerns, academic stress, and identity challenges—empowering them to grow with confidence and resilience.",
-    imgSrc: "https://picsum.photos/seed/service4/600/400",
+    imgSrc: "/images/child and adolance.png",
     aiHint: "child with toys",
   },
 ];
