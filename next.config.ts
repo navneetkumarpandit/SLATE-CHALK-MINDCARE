@@ -19,6 +19,11 @@ export const nextConfig: NextConfig = {
     // Configure allowed remote image domains and local serving
     remotePatterns: [
 
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        pathname: '/seed/**' // Allowing images from the /seed path on picsum.photos
+      },
        // Add localhost if you serve uploaded images locally during development
        // Note: For production, use a proper CDN or cloud storage and add its hostname.
       // {

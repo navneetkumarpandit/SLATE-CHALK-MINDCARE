@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description: 'Nurturing minds, fostering well-being. Expert psychological care and counseling services.',
 };
 
+const socialLinks = {
+  linkedin: 'https://www.linkedin.com/in/yourprofile', // Replace with actual LinkedIn link
+  instagram: 'https://www.instagram.com/yourhandle', // Replace with actual Instagram link
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,8 +38,9 @@ export default function RootLayout({
               {children}
             </PageTransitionLayout>
           </main>
-          <Footer /> {/* Add the Footer component here */}
+          
         </div>
+        <Footer socialLinks={socialLinks} /> {/* Pass an empty object as socialLinks */}
         <Toaster />
       </body></html>
   );

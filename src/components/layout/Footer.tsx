@@ -5,8 +5,15 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-export function Footer() {
+interface SocialLinks {
+  linkedin?: string;
+  instagram?: string;
+  facebook?: string;
+}
+
+export function Footer({ socialLinks }: { socialLinks?: SocialLinks }) {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
+
   const [isClient, setIsClient] = useState(false); // To track if component has mounted
   useEffect(() => { setIsClient(true); setCurrentYear(new Date().getFullYear()); }, []);
 
