@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <div className="container mx-auto py-12 md:py-20">
       <section className="text-center mb-16" data-ai-hint="hero section with title and description">
-        <h1 className="text-5xl font-bold text-primary mb-4">About Slate & Chalk MindCare</h1>
+        <h1 className="text-5xl font-bold text-primary mb-4">About Slatenchalk Mindcare</h1>
         <p className="text-xl text-foreground max-w-3xl mx-auto">
           Dedicated to providing specialized mental health services designed to help children understand their emotions, manage challenges, and build resilience in a safe and nurturing environment.
         </p>

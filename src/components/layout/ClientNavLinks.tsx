@@ -102,12 +102,12 @@ export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
                     <Link href="/" className="flex items-center text-xl font-bold text-primary mb-4">
                         <Image
                             src="/images/SlatenChalk@1x.svg" // Use the same logo as the footer
-                            alt="Slate & Chalk MindCare Logo"
+                            alt="Slatenchalk Mindcare Logo"
                             width={60} // Adjusted width for mobile menu (proportional to 150x50)
                             height={20} // Adjusted height for mobile menu (proportional to 150x50)
                             className="mr-2"
                         />
- SLATENCHALK MINDCARE
+ Slatenchalk Mindcare
                     </Link>
                     {navItems.map((item) => (
                        <SheetTrigger key={item.href} asChild>
