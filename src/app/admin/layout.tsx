@@ -11,13 +11,6 @@ import { ArrowLeft } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {
-  // --- Authorization Check ---
-  const isAdmin = await isAdminSession();
-  if (!isAdmin) {
-    // Redirect if not admin when accessing any /admin/* route
-    console.log('[Admin Layout] Unauthorized access, redirecting to login.');
-    redirect('/login?origin=/admin'); // Redirect to login, could capture specific path if needed
-  }
 
   return (
     <div>

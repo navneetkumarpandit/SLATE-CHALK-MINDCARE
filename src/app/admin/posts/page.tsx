@@ -32,13 +32,7 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function AdminPostsPage() {
-  // --- Authorization Check ---
-  if (!(await isAdminSession())) {
-    console.log('[Admin Posts Page] Unauthorized access attempt, redirecting to login.');
-    redirect('/login?origin=/admin/posts'); // Redirect non-admins
-  }
-
-  console.log('[Admin Posts Page] Admin verified, fetching posts.');
+ console.log('[Admin Posts Page] Fetching posts.');
   const posts = await getPosts(); // Fetch all posts
 
   return (

@@ -26,12 +26,6 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic'; // Ensure fresh data and auth check
 
 export default async function AdminTestimonialsPage() {
-  // --- Authorization Check ---
-  if (!(await isAdminSession())) {
-    console.log('[Admin Testimonials Page] Unauthorized access attempt, redirecting to login.');
-    redirect('/login?origin=/admin/testimonials');
-  }
-
   console.log('[Admin Testimonials Page] Admin verified, fetching testimonials.');
   const testimonials = await getTestimonials();
 

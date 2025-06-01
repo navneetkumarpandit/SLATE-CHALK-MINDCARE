@@ -9,12 +9,6 @@ import { List, MessageSquareQuote, Settings } from 'lucide-react'; // Import ico
 export const dynamic = 'force-dynamic'; // Ensure auth check on every load
 
 export default async function AdminDashboardPage() {
-  // --- Authorization Check ---
-  if (!(await isAdminSession())) {
-    console.log('[Admin Dashboard] Unauthorized access attempt, redirecting to login.');
-    redirect('/login?origin=/admin');
-  }
-
   console.log('[Admin Dashboard] Admin verified, rendering dashboard.');
 
   return (
