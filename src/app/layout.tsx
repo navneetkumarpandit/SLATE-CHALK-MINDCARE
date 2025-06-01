@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer'; // Import the Footer component
 import { Toaster } from "@/components/ui/toaster";
+import PageTransitionLayout from '@/components/layout/PageTransitionLayout';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -23,11 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable}`}><body>
+    <html lang="en" className={`${montserrat.variable}`}>
+      <body>
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
-            {children}
+            <PageTransitionLayout>
+              {children}
+            </PageTransitionLayout>
           </main>
           <Footer /> {/* Add the Footer component here */}
         </div>

@@ -17,14 +17,20 @@ export default function HomePage() {
           className="absolute inset-0 z-0 opacity-30"
           data-ai-hint="playful background"
           priority
+          unoptimized // Add this if you're not using a Next.js Image optimizer
         />
         <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight md:leading-loose">
+ <div className="flex flex-col items-center"> {/* Added missing wrapper div */}
+          <h1
+            className="text-5xl md:text-7xl font-bold text-primary mb-6 leading-tight md:leading-loose"
+          >
             Nurturing Minds, <br />Fostering Well-being
           </h1>
-          <p className="text-lg md:text-xl text-foreground mb-8 max-w-2xl mx-auto">
+          <p
+            className="text-lg md:text-xl text-foreground mb-8 max-w-2xl mx-auto"
+          >
             Slatenchalk MindCare offers expert psychological care and counseling services designed to support your child's mental health journey.
-          </p>
+ </p>
           <div className="space-x-4">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/services">Explore Services <ArrowRight className="ml-2 h-5 w-5" /></Link>
@@ -33,9 +39,9 @@ export default function HomePage() {
               <Link href="/contact">Book a Session</Link>
             </Button>
           </div>
+ </div> {/* Closed the missing wrapper div */}
         </div>
       </section>
-
       {/* Our Approach Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 text-center">

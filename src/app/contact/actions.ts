@@ -1,6 +1,7 @@
 // src/app/contact/actions.ts
 'use server';
 
+import nodemailer from 'nodemailer';
 import { z } from 'zod';
 import type { AppSettings, SmtpSettings } from '@/lib/types'; // Import AppSettings
 
@@ -69,8 +70,8 @@ export async function sendContactEmailAction(
 
   try {
     if (smtpConfig && smtpConfig.host) {
-      console.log('--- Using Configured SMTP Settings ---');
-      console.log(`SMTP Host: ${smtpConfig.host}, Port: ${smtpConfig.port}, User: ${smtpConfig.user}, Secure: ${smtpConfig.secure}`);
+      console.log('--- Attempting to send email using Configured SMTP Settings ---');
+      // console.log(`SMTP Host: ${smtpConfig.host}, Port: ${smtpConfig.port}, User: ${smtpConfig.user ? 'Configured' : 'Not Configured'}, Secure: ${smtpConfig.secure}`); // Avoid logging password
       // In a real app, you would use nodemailer or a similar library here.
       // Example:
       // const transporter = nodemailer.createTransport({
@@ -80,32 +81,57 @@ export async function sendContactEmailAction(
       //   auth: { user: smtpConfig.user, pass: smtpConfig.pass },
       // });
 
-      // Send to Site Owner (using configured 'from' or default)
-      const siteOwnerEmail = smtpConfig.fromEmail || DEFAULT_TO_EMAIL_ADDRESS; // Or a dedicated admin email from settings
-      console.log('--- Simulating Email Sending (via SMTP config) to Site Owner ---');
-      console.log(`To: ${DEFAULT_TO_EMAIL_ADDRESS}`); // Target email as per original request
-      console.log(`From: "${name}" <${smtpConfig.fromEmail || DEFAULT_FROM_EMAIL_ADDRESS}>`);
-      console.log(`Reply-To: "${name}" <${email}>`);
-      console.log(`Subject: New Contact Form Submission from ${name} (via SMTP)`);
-      console.log('--- Message Body ---');
-      console.log(message);
-      console.log('---------------------------------------------');
-      // await transporter.sendMail({ from: `"${name}" <${smtpConfig.fromEmail}>`, to: DEFAULT_TO_EMAIL_ADDRESS, replyTo: email, subject: ..., html: ... });
+      const transporter = nodemailer.createTransport({
+        host: smtpConfig.host,
+        port: smtpConfig.port,
+        secure: smtpConfig.secure, // true for 465, false for other ports
+        auth: {
+          user: smtpConfig.user,
+          pass: smtpConfig.pass,
+        },
+      });
 
-      // Send Confirmation to User (using configured 'from' or default)
-      console.log('\n--- Simulating Confirmation Email (via SMTP config) to User ---');
-      console.log(`To: ${email}`);
-      console.log(`From: "Slate & Chalk MindCare" <${smtpConfig.fromEmail || DEFAULT_FROM_EMAIL_ADDRESS}>`);
-      console.log(`Subject: Thank you for contacting Slate & Chalk MindCare (via SMTP)`);
-      console.log('--- Message Body (Copy) ---');
-      console.log(`Hi ${name},\n\nThank you for reaching out. We received your message:\n\n"${message}"\n\nWe'll reply soon.\n\nBest,\nThe Slate & Chalk MindCare Team`);
-      console.log('------------------------------------------');
-      // await transporter.sendMail({ from: `"Slate & Chalk MindCare" <${smtpConfig.fromEmail}>`, to: email, subject: ..., html: ... });
+      const mailOptionsToAdmin = {
+        from: smtpConfig.fromEmail || DEFAULT_FROM_EMAIL_ADDRESS, // Use configured 'from' or a default fallback
+        to: DEFAULT_TO_EMAIL_ADDRESS, // Always send to the default recipient
+        replyTo: email, // Allow replying directly to the user
+        subject: `New Contact Form Submission from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
+        html: `
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      };
+
+      // Send email to the site owner
+      const infoAdmin = await transporter.sendMail(mailOptionsToAdmin);
+      console.log('Message sent to admin: %s', infoAdmin.messageId);
+
+      // Send confirmation email to the user
+      const mailOptionsToUser = {
+        from: `Slate & Chalk MindCare <${smtpConfig.fromEmail || DEFAULT_FROM_EMAIL_ADDRESS}>`, // Use a more friendly 'from' for the user
+        to: email,
+        subject: 'Thank you for contacting Slate & Chalk MindCare',
+        text: `Hi ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you as soon as possible.\n\nYour message:\n"${message}"\n\nBest regards,\nThe Slate & Chalk MindCare Team`,
+        html: `
+          <p>Hi ${name},</p>
+          <p>Thank you for reaching out to us. We have received your message and will get back to you as soon as possible.</p>
+          <p><strong>Your message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>Best regards,<br>The Slate & Chalk MindCare Team</p>
+        `,
+      };
+
+      const infoUser = await transporter.sendMail(mailOptionsToUser);
+      console.log('Confirmation message sent to user: %s', infoUser.messageId);
+
+
 
     } else {
       console.warn('SMTP settings not configured or host not found. Falling back to console log simulation.');
       // Fallback simulation as before
-      console.log('--- Simulating Email Sending to Site Owner (No SMTP Config) ---');
       console.log(`To: ${DEFAULT_TO_EMAIL_ADDRESS}`);
       console.log(`From: "${name}" <${DEFAULT_FROM_EMAIL_ADDRESS}>`);
       console.log(`Reply-To: "${name}" <${email}>`);
@@ -113,7 +139,6 @@ export async function sendContactEmailAction(
       console.log('--- Message Body ---');
       console.log(message);
       console.log('---------------------------------------------');
-
       console.log('\n--- Simulating Confirmation Email to User (No SMTP Config) ---');
       console.log(`To: ${email}`);
       console.log(`From: "Slate & Chalk MindCare" <${DEFAULT_FROM_EMAIL_ADDRESS}>`);

@@ -14,7 +14,7 @@ export async function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center ml-12"> {/* Added ml-12 to move logo to the right */}
+        <Link href="/" className="flex items-center ml-12"> {/* Added ml-12 to move logo to the right */}{" "}
           <Image
             src="/images/SlatenChalk@1x.svg"
             alt="Slatenchalk MindCare Logo"
