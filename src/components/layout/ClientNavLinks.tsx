@@ -12,34 +12,32 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/testimonials', label: 'Testimonials' },
   { href: '/contact', label: 'Contact Us' },
+  { href: '/blog.html', label: 'Blog' }, // Link to the static blog page
+  { href: '/testimonials.html', label: 'Testimonials' }, // Link to the static testimonials page
 ];
 
 const adminNavItems = [
-    { href: '/admin/posts', label: 'Manage Posts', icon: List },
-    { href: '/blog/new', label: 'Create Post', icon: PlusCircle },
     { href: '/admin/testimonials', label: 'Manage Testimonials', icon: List },
     { href: '/admin/testimonials/new', label: 'Add Testimonial', icon: MessageSquareQuote },
     // Added Settings link for admin
-    { href: '/admin/settings', label: 'Settings', icon: Settings },
 ];
 
 interface ClientNavLinksProps {
     isAdmin: boolean;
     isLoggedIn: boolean; // Also need isLoggedIn for the LogoutButton/Login button
+    pathname: string;
 }
 
-export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
+export function ClientNavLinks({ isAdmin, isLoggedIn, pathname }: ClientNavLinksProps) {
     return (
         <>
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-4"> {/* Reduced space-x-6 to space-x-4 */}
               {navItems.map((item) => (
-                <NavLink key={item.href} href={item.href}>
+                <NavLink key={item.href} href={item.href} initialPathname={pathname}>
                   {item.label}
-                </NavLink>
+                </NavLink> // Pass the pathname prop to NavLink
               ))}
                {/* Conditionally show Admin links for admins */}
                {isAdmin && (
@@ -47,16 +45,10 @@ export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
                  <div className="flex items-center space-x-3 border-l pl-4 ml-4 border-border">
                     <span className="text-sm font-semibold text-muted-foreground">Admin:</span>
                     {/* Directly showing some admin links for quick access */}
-                     <NavLink key="/admin/posts" href="/admin/posts" activeClassName="text-accent font-semibold border-b-2 border-accent">
-                         <List className="mr-1 h-4 w-4 inline-block" /> Manage Posts
-                     </NavLink>
-                     <NavLink key="/blog/new" href="/blog/new" activeClassName="text-accent font-semibold border-b-2 border-accent">
-                         <PlusCircle className="mr-1 h-4 w-4 inline-block" /> Create Post
-                     </NavLink>
-                      <NavLink key="/admin/testimonials" href="/admin/testimonials" activeClassName="text-accent font-semibold border-b-2 border-accent">
+                    <NavLink key="/admin/testimonials" href="/admin/testimonials" activeClassName="text-accent font-semibold border-b-2 border-accent" initialPathname={pathname}> // Pass the pathname prop to NavLink
                          <List className="mr-1 h-4 w-4 inline-block" /> Manage Testimonials
-                     </NavLink>
-                      <NavLink key="/admin/settings" href="/admin/settings" activeClassName="text-accent font-semibold border-b-2 border-accent">
+                    </NavLink>
+                      <NavLink key="/admin/settings" href="/admin/settings" activeClassName="text-accent font-semibold border-b-2 border-accent" initialPathname={pathname}> // Pass the pathname prop to NavLink
                          <Settings className="mr-1 h-4 w-4 inline-block" /> Settings
                      </NavLink>
                  </div>
@@ -87,8 +79,8 @@ export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
                     </Link>
                     {navItems.map((item) => (
                        <SheetTrigger key={item.href} asChild>
-                           <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1">
-                               {item.label}
+                           <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1" initialPathname={pathname}>
+                               {item.label} // Pass the pathname prop to NavLink
                            </NavLink>
                        </SheetTrigger>
                     ))}
@@ -98,7 +90,7 @@ export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
                         <div className="border-t pt-4 mt-4">
                             <span className="text-sm font-semibold text-muted-foreground px-2">Admin Menu</span>
                             {adminNavItems.map(item => (
-                                <SheetTrigger key={item.href} asChild>
+                                <SheetTrigger key={item.href} asChild> // Pass the pathname prop to NavLink
                                     <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1 text-accent">
                                         {/* Render the icon if available */}
                                         {item.icon && <item.icon className="mr-2 h-4 w-4" />}

@@ -62,7 +62,7 @@ export default function AboutPage() {
         <div className="md:flex items-center gap-12">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
-              src="https://picsum.photos/seed/aboutstory/600/450"
+              src="/images/child.png"
               alt="Illustration of children playing and learning"
               width={600}
               height={450}

@@ -12,6 +12,7 @@ interface SocialLinks {
 }
 
 export function Footer({ socialLinks }: { socialLinks?: SocialLinks }) {
+  console.log('Social Links in Footer:', socialLinks);
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   const [isClient, setIsClient] = useState(false); // To track if component has mounted

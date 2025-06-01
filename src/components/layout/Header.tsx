@@ -1,13 +1,12 @@
 // src/components/layout/Header.tsx
 import Link from 'next/link';
 import { ClientNavLinks } from './ClientNavLinks'; // Import the new Client Component
+import { headers } from 'next/headers';
 import Image from 'next/image'; // Import the Image component
 import { PlusCircle } from 'lucide-react'; // Import PlusCircle
 
 export async function Header() {
-  // Fetch user session server-side
-
-
+  const pathname = headers().get('x-pathname') || '/'; // Get the current path from headers
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between">
@@ -23,7 +22,7 @@ export async function Header() {
         </Link>
 
         {/* Render the ClientNavLinks component */}
-        <ClientNavLinks />
+        <ClientNavLinks pathname={pathname} />
 
       </div>
     </header>
