@@ -12,9 +12,6 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
-  { href: '/contact', label: 'Contact Us' },
-  { href: '/blog.html', label: 'Blog' }, // Link to the static blog page
-  { href: '/testimonials.html', label: 'Testimonials' }, // Link to the static testimonials page
 ];
 
 const adminNavItems = [
