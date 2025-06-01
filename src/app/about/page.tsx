@@ -27,7 +27,7 @@ export default function AboutPage() {
           <div className="md:w-1/2">
             <h2 className="text-4xl font-bold text-primary mb-6">Our Story</h2>
             <p className="text-lg text-foreground mb-4">
-              Slatenchalk MindCare was founded with a simple yet profound vision: to create a sanctuary for mental healing and growth. We understand that seeking help is a courageous step, and we are here to support you with empathy, professionalism, and evidence-based practices.
+              Slatenchalk Mindcare was founded with a simple yet profound vision: to create a sanctuary for mental healing and growth. We understand that seeking help is a courageous step, and we are here to support you with empathy, professionalism, and evidence-based practices.
             </p>
             <p className="text-lg text-foreground">
               Our name reflects our philosophy: 'Slate' for the fresh start and new perspectives we help uncover, and 'Chalk' for the gentle guidance and tools we provide to help you write your own story of resilience and well-being.
