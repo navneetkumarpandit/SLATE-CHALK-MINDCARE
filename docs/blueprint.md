@@ -1,8 +1,8 @@
-# **App Name**: Slate & Chalk MindCare
+# **App Name**: Slatenchalk Mindcare
 
 ## Core Features:
 
-- Home Page: A home page introducing the Slate & Chalk MindCare brand and services, similar to the reference site.
+- Home Page: A home page introducing the Slatenchalk Mindcare brand and services, similar to the reference site.
 - About Us Page: An "About Us" page detailing the organization's mission, values, and team, inspired by the provided website.
 - Services Page: A "Services" page outlining the specific services offered, mirroring the structure and style of the example site.
 - Blog Section: A blog section mirroring the look and feel of the reference site with standard blog functionality, which will allow users to add pages, edit pages, and remove pages

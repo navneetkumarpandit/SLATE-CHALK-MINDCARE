@@ -101,10 +101,10 @@ export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
                   <div className="grid gap-4 py-6">
                     <Link href="/" className="flex items-center text-xl font-bold text-primary mb-4">
                         <Image
-                            src="/images/SlatenChalk@1x.svg" // Use the same logo as the footer
+                            src="/images/SlatenChalk@1x.svg" // Use the same logo
                             alt="Slatenchalk Mindcare Logo"
-                            width={60} // Adjusted width for mobile menu (proportional to 150x50)
-                            height={20} // Adjusted height for mobile menu (proportional to 150x50)
+                            width={60}
+                            height={20}
                             className="mr-2"
                         />
  Slatenchalk Mindcare
