@@ -4,7 +4,6 @@ import { getTestimonialById } from '@/lib/testimonials-data';
 import { notFound, redirect } from 'next/navigation';
 import { TestimonialForm } from '@/components/testimonials/TestimonialForm';
 import { updateTestimonialAction } from '@/app/admin/testimonials/actions';
-import { isAdminSession } from '@/lib/auth-utils';
 import type { Metadata } from 'next';
 
 interface EditTestimonialPageProps {
@@ -23,13 +22,7 @@ export async function generateMetadata({ params }: EditTestimonialPageProps): Pr
 }
 
 export default async function EditTestimonialPage({ params }: EditTestimonialPageProps) {
-  // --- Authorization Check ---
-  if (!(await isAdminSession())) {
-      console.log(`[Edit Testimonial Page /${params.id}] Unauthorized access attempt, redirecting.`);
-      redirect(`/login?origin=/admin/testimonials/${params.id}/edit`);
-  }
-
-   console.log(`[Edit Testimonial Page /${params.id}] Admin verified, fetching testimonial.`);
+  console.log(`[Edit Testimonial Page /${params.id}] Fetching testimonial.`);
   const testimonial = await getTestimonialById(params.id);
 
   if (!testimonial) {

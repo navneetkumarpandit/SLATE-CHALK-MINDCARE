@@ -3,7 +3,6 @@ import { notFound, redirect } from 'next/navigation';
 import { BlogPostForm } from '@/components/blog/BlogPostForm';
 import { updatePost } from '@/app/blog/actions';
 import { isAdminSession } from '@/lib/auth-utils'; // Use server-side session check
-
 // export const dynamic = 'force-dynamic'; // Reconsider - fetch uses no-store
 
 interface EditPostPageProps {
@@ -25,16 +24,7 @@ export async function generateMetadata({ params }: EditPostPageProps) {
   };
 }
 
-export default async function EditPostPage({ params }: EditPostPageProps) {
-  // Check if the user is an admin via server-side session first
-  if (!(await isAdminSession())) {
-      console.log(`[Edit Post Page /${params.slug}] Unauthorized access attempt, redirecting.`);
-    // Redirect non-admins away
-     redirect(`/login?origin=/blog/${params.slug}/edit`); // Redirect to login
-     // or redirect(`/blog/${params.slug}?error=unauthorized`);
-  }
-
-   console.log(`[Edit Post Page /${params.slug}] Admin verified, fetching post.`);
+export default async function EditPostPage({ params }: EditPostPageProps) {  console.log(`[Edit Post Page /${params.slug}] Admin verified, fetching post.`);
   const post = await getPostBySlug(params.slug);
 
   if (!post) {
