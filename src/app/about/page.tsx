@@ -5,11 +5,57 @@ import { Users, Target, HeartHandshake, CheckCircle } from "lucide-react";
 export default function AboutPage() {
   return (
     <div className="container mx-auto py-12 md:py-20">
+
       <section className="text-center mb-16" data-ai-hint="hero section with title and description">
         <h1 className="text-5xl font-bold text-primary mb-4">About Slatenchalk Mindcare</h1>
         <p className="text-xl text-foreground max-w-3xl mx-auto">
           Dedicated to providing specialized mental health services designed to help children understand their emotions, manage challenges, and build resilience in a safe and nurturing environment.
         </p>
+      </section>
+
+      {/* Meet the Founder Section */}
+      <section className="mb-16">
+        <div className="md:flex items-start gap-12 flex-row-reverse -mt-10"> {/* flex-row-reverse to place image on right */}
+          <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center"> {/* Added flex and justify-center for image centering */}
+            <Image
+              src="/images/founder.jpg"
+              alt="Founder of Slatenchalk Mindcare"
+              width={600}
+              height={600}
+              className="rounded-full shadow-xl" // Optional: make image round
+              data-ai-hint="founder image"
+ />
+          </div>
+          <div className="md:w-1/2">
+            <h2 className="text-4xl font-bold text-primary mb-6">Meet the Founder</h2>
+            <p className="text-lg text-foreground mb-4">
+              Hello, I’m Pranali Pandit, the founder of Slatenchalk Mindcare, a space born from a deep passion for nurturing the mental and emotional well-being of children.
+            </p>
+            <p className="text-lg text-foreground mb-4">
+              With a background in counselling psychology and specialized training in Cognitive Behaviour Therapy (CBT), my journey began with a simple, yet powerful belief: every child deserves to feel seen, heard, and understood. Over the years, I’ve worked closely with families, educators, and schools, witnessing first-hand how emotional health forms the foundation of a child’s growth—academically, socially, and personally.
+            </p>
+            <p className="text-lg text-foreground mb-4">
+              But Slatenchalk Mindcare is more than just a mental health initiative. It’s a movement to bring compassion, understanding, and science-backed practices into every classroom and home. Through assessments, therapeutic support, parent guidance, and school collaborations, we aim to create environments where children can thrive—not just survive.
+            </p>
+            <p className="text-lg text-foreground font-semibold mt-6 mb-4">
+              My Vision for Slatenchalk Mindcare
+            </p>
+            <p className="text-lg text-foreground mb-2">
+              At Slatenchalk Mindcare, our vision is to make emotional intelligence and mental health as fundamental as ABCs and 123s. We envision a world where:
+            </p>
+            <ul>
+              <li className="text-lg text-foreground mb-2">Schools are not just places of learning, but of healing and emotional safety.</li>
+              <li className="text-lg text-foreground mb-2">Parents feel empowered, not judged, as they navigate their child's emotional world.</li>
+              <li className="text-lg text-foreground">Children grow up not trying to 'fix' themselves but learning to understand and accept themselves.</li>
+            </ul>
+            <p className="text-lg text-foreground mt-4 mb-4">
+              We’re building a future where emotional wellness is integrated into the everyday lives of children—at school, at home, and within themselves. Whether it’s managing big feelings, building resilience, or addressing deeper concerns, Slatenchalk Mindcare walks with families and educators every step of the way.
+            </p>
+            <p className="text-lg text-foreground">
+              Because when we care for the minds of our children, we shape a kinder, more conscious world.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="mb-16">
@@ -81,6 +127,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/*
       <section>
         <h2 className="text-4xl font-bold text-primary mb-10 text-center">Meet Our Team (Placeholder)</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,6 +157,7 @@ export default function AboutPage() {
           Our team of dedicated professionals is passionate about supporting your journey to mental wellness. We invite you to learn more about their expertise during your consultation.
         </p>
       </section>
+      */}
     </div>
   );
 }
