@@ -107,7 +107,7 @@ export function ClientNavLinks({ isAdmin, isLoggedIn }: ClientNavLinksProps) {
                             height={20} // Adjusted height for mobile menu (proportional to 150x50)
                             className="mr-2"
                         />
-                      SLATE & CHALK <span className="font-light">MINDCARE</span>
+ SLATENCHALK MINDCARE
                     </Link>
                     {navItems.map((item) => (
                        <SheetTrigger key={item.href} asChild>

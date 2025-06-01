@@ -26,7 +26,7 @@ export default function HomePage() {
           >
             Nurturing Minds, <br />Fostering Well-being
           </h1>
-          <p
+          <p 
             className="text-lg md:text-xl text-foreground mb-8 max-w-2xl mx-auto"
           >
             Slatenchalk MindCare offers expert psychological care and counseling services designed to support your child's mental health journey.
@@ -47,7 +47,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-primary mb-6">Our Approach to Mental Wellness</h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto mb-12">
-            At Slatenchalk MindCare, we believe in a compassionate, evidence-based approach to mental health. We tailor our therapies to meet your child's unique needs, fostering a safe and supportive environment for growth and healing.
+ At Slatenchalk MindCare, we believe in a compassionate, evidence-based approach to mental health. We tailor our therapies to meet your child's unique needs, fostering a safe and supportive environment for growth and healing.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="shadow-lg hover:shadow-xl transition-shadow">
