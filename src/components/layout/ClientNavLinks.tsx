@@ -12,6 +12,7 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 const adminNavItems = [
@@ -77,7 +78,7 @@ export function ClientNavLinks({ isAdmin, isLoggedIn, pathname }: ClientNavLinks
                     {navItems.map((item) => (
                        <SheetTrigger key={item.href} asChild>
                            <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1" initialPathname={pathname}>
-                               {item.label} // Pass the pathname prop to NavLink
+                               {item.label} 
                            </NavLink>
                        </SheetTrigger>
                     ))}
@@ -87,7 +88,7 @@ export function ClientNavLinks({ isAdmin, isLoggedIn, pathname }: ClientNavLinks
                         <div className="border-t pt-4 mt-4">
                             <span className="text-sm font-semibold text-muted-foreground px-2">Admin Menu</span>
                             {adminNavItems.map(item => (
-                                <SheetTrigger key={item.href} asChild> // Pass the pathname prop to NavLink
+                                <SheetTrigger key={item.href} asChild>
                                     <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1 text-accent">
                                         {/* Render the icon if available */}
                                         {item.icon && <item.icon className="mr-2 h-4 w-4" />}
