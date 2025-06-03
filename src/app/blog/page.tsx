@@ -29,7 +29,7 @@ export default function BlogPage() {
                 unusual behaviours are often silent cries for help.
               </p>
               <button className="text-blue-600 hover:underline mt-4">
- <a href="/blog/the-silent-suffering">
+ <a href="/blog/the-silent-suffering.tsx">
                 Read More
  </a>
  </button>
