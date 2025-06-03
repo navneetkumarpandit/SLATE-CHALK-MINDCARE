@@ -29,12 +29,11 @@ export default function BlogPage() {
                 unusual behaviours are often silent cries for help.
               </p>
               <button className="text-blue-600 hover:underline mt-4">
- <a href="/blog/the-silent-suffering.tsx">
-                Read More
- </a>
- </button>
+                <a href="/blog/the-silent-suffering" className="text-blue-600 hover:underline mt-4"> {/* Moved styling from button to a */}
+                  Read More
+                </a>
+              </button>
             </div>
-
             {/* Sample Blog Post 2 */}
             <div className="bg-purple-100 text-purple-900 border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
               <h2 className="text-2xl font-semibold mb-2">
@@ -48,11 +47,9 @@ export default function BlogPage() {
                 readers a glimpse into what they can expect from the full
                 article.
               </p>
- <button className="text-blue-600 hover:underline mt-4">
- <a href="/blog/post-two">
+ <a href="/blog/post-two" className="text-blue-600 hover:underline mt-4">
                 Read More
  </a>
-</button>
             </div>
 
             {/* Sample Blog Post 3 */}
@@ -68,12 +65,10 @@ export default function BlogPage() {
                 text to demonstrate the layout of the blog listing.
               </p>
               <button className="text-blue-600 hover:underline mt-4">
- <a href="/blog/post-three">
-                Read More
- </a>
-</button>
-
-            </div>
+                <a href="/blog/post-three" className="text-blue-600 hover:underline mt-4">
+                  Read More
+                </a>
+              </button>            </div>
           </div>
         </section>
       </div>
