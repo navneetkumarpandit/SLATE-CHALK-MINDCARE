@@ -8,23 +8,26 @@ import { PlusCircle } from 'lucide-react'; // Import PlusCircle
 export async function Header() {
   const pathname = headers().get('x-pathname') || '/'; // Get the current path from headers
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center ml-12"> {/* Added ml-12 to move logo to the right */}{" "}
-          <Image
-            src="/images/SlatenChalk@1x.svg"
-            alt="Slatenchalk MindCare Logo"
-            width={86} // Increased from 75 (75 * 1.15 = 86.25)
-            height={29} // Increased from 25 (25 * 1.15 = 28.75)
-            // className="mr-3" // Removed mr-3 as it's not affecting external spacing and no text is next to it
-          />
-          {/* Logo text removed */}
-        </Link>
+    <> {/* Use a fragment to wrap the header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center ml-12"> {/* Added ml-12 to move logo to the right */}{" "}
+            <Image
+              src="/images/SlatenChalk@1x.svg"
+              alt="Slatenchalk MindCare Logo"
+              width={86} // Increased from 75 (75 * 1.15 = 86.25)
+              height={29} // Increased from 25 (25 * 1.15 = 28.75)
+              // className="mr-3" // Removed mr-3 as it's not affecting external spacing and no text is next to it
+            />
+            {/* Logo text removed */}
+          </Link>
 
-        {/* Render the ClientNavLinks component */}
-        <ClientNavLinks pathname={pathname} />
+          {/* Render the ClientNavLinks component */}
+          <ClientNavLinks pathname={pathname} />
 
-      </div>
-    </header>
+          {/* Blog link commented out - This comment was misplaced and causing a syntax error */}
+        </div>
+      </header>
+    </> // Close the fragment
   );
 }
