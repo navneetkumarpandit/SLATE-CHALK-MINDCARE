@@ -12,6 +12,8 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/another-testimonials-page', label: 'Testimonial' },
   { href: '/contact', label: 'Contact Us' },
 ];
 

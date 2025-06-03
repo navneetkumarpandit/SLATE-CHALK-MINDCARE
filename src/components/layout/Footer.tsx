@@ -44,7 +44,7 @@ export function Footer({ socialLinks }: { socialLinks?: SocialLinks }) {
             <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
             <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
             <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-            <li><Link href="/testimonials" className="hover:text-primary transition-colors">Testimonials</Link></li>
+            <li><Link href="/another-testimonials-page" className="hover:text-primary transition-colors">Testimonials</Link></li>
           </ul>
         </div>
 
