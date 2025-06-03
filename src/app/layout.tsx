@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 const socialLinks = {
   linkedin: 'https://www.linkedin.com/in/yourprofile', // Replace with actual LinkedIn link
   instagram: 'https://www.instagram.com/yourhandle', // Replace with actual Instagram link
+  facebook: 'https://www.facebook.com/yourhandle', // Replace with actual Facebook link
 };
 
 export default function RootLayout({
