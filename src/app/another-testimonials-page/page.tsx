@@ -43,7 +43,7 @@ const AnotherTestimonialsPage: React.FC = () => {
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
           <p className="text-sm mb-2">⭐⭐⭐⭐⭐</p>
           <p className="italic mb-4 text-lg">"A positive and supportive environment."</p>
-          <p className="font-semibold">- Rohit singh</p>
+          <p className="font-semibold">- Rohit Singh</p>
         </div>
 
         {/* Testimonial Card 6 - Adding another one for variety */}

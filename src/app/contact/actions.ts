@@ -124,14 +124,14 @@ export async function sendContactEmailAction(
       const mailOptionsToUser = {
         from: `SlateNchalk Mindcare <${smtpConfig.fromEmail || DEFAULT_FROM_EMAIL_ADDRESS}>`, // Use a more friendly 'from' for the user
         to: email,
-        subject: 'Thank you for contacting Slate & Chalk MindCare',
-        text: `Hi ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you as soon as possible.\n\nYour message:\n"${message}"\n\nBest regards,\nThe Slate & Chalk MindCare Team`,
+        subject: 'Thank you for contacting SlateNchalk MindCare',
+        text: `Hi ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you as soon as possible.\n\nYour message:\n"${message}"\n\nBest regards,\nThe SlateNchalk MindCare Team`,
         html: `
           <p>Hi ${name},</p>
           <p>Thank you for reaching out to us. We have received your message and will get back to you as soon as possible.</p>
           <p><strong>Your message:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
-          <p>Best regards,<br>The Slate & Chalk MindCare Team</p>
+          <p>Best regards,<br>The SlateNchalk MindCare Team</p>
         `,
       };
 
@@ -153,8 +153,8 @@ export async function sendContactEmailAction(
       console.log('---------------------------------------------');
       console.log('\n--- Simulating Confirmation Email to User (No SMTP Config) ---');
       console.log(`To: ${email}`);
-      console.log(`From: "Slate & Chalk MindCare" <${DEFAULT_FROM_EMAIL_ADDRESS}>`);
-      console.log(`Subject: Thank you for contacting Slate & Chalk MindCare`);
+      console.log(`From: "SlateNchalk MindCare" <${DEFAULT_FROM_EMAIL_ADDRESS}>`);
+      console.log(`Subject: Thank you for contacting SlateNchalk MindCare`);
       console.log('--- Message Body (Copy) ---');
       console.log(`Hi ${name},\n\nThank you for reaching out to us. We have received your message:\n\n"${message}"\n\nWe will get back to you as soon as possible.\n\nBest regards,\nThe Slate & Chalk MindCare Team`);
       console.log('------------------------------------------');
@@ -164,7 +164,7 @@ export async function sendContactEmailAction(
 
     return {
       success: true,
-      message: 'Thank you for your message! We will get back to you soon. A copy of your message has been sent to your email address (simulated).',
+      message: 'Thank you for your message! We will get back to you soon. A copy of your message has been sent to your email address.',
     };
   } catch (error) {
     console.error('Error sending contact email:', error);

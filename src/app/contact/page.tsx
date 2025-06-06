@@ -1,5 +1,5 @@
 // Required for form handling with useActionState or client-side interactions
-'use client'; 
+'use client';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { useActionState, useEffect, useRef } from "react"; 
+import { useActionState, useEffect, useRef } from "react";
 import { useToast } from '@/hooks/use-toast';
 import Image from "next/image";
 import type { ContactFormState } from './actions'; // Import the state type
@@ -92,16 +92,17 @@ export default function ContactPage() {
               </div>
             </CardContent>
           </Card>
-          
+
           <div className="rounded-lg overflow-hidden shadow-lg">
-            <Image 
-              src="https://picsum.photos/seed/map/600/350" 
-              alt="Colorful illustrated map location" 
-              width={600} 
-              height={350} 
-              className="w-full h-auto object-cover"
-              data-ai-hint="colorful map"
-            />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120630.26362627134!2d72.91361312046726!3d19.107007188193798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c662b9c898d3%3A0xc20553787078a579!2sGhatkopar%2C%20Mumbai%2C%20Maharashtra%20400086%2C%20India!5e0!3m2!1sen!2sus!4v1705300035328!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
