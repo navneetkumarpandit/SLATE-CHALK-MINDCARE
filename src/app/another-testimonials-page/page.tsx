@@ -22,7 +22,7 @@ const AnotherTestimonialsPage: React.FC = () => {
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
           <p className="text-sm mb-2">⭐⭐⭐⭐⭐⭒</p> {/* Using '⭒' for half-star */}
           <p className="italic mb-4 text-lg">"Professional and compassionate. A great experience."</p>
-          <p className="font-semibold">- Ravi Pandey B</p>
+          <p className="font-semibold">- Ravi Pandey </p>
         </div>
 
         {/* Testimonial Card 3 */}
