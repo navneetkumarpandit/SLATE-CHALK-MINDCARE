@@ -4,10 +4,11 @@
 import Link from 'next/link';
 import { NavLink } from './NavLink';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu, LogIn, LogOut, Settings, PlusCircle, MessageSquareQuote, List } from 'lucide-react';
 import Image from 'next/image'; // Import Image for mobile menu logo
 
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'; // Import VisuallyHidden
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
@@ -67,6 +68,10 @@ export function ClientNavLinks({ isAdmin, isLoggedIn, pathname }: ClientNavLinks
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[280px] sm:w-[320px]"> {/* Adjust width if needed */}
                   <div className="grid gap-4 py-6">
+                    {/* Add DialogTitle for accessibility */}
+                    <SheetTitle>
+                      <VisuallyHidden>Mobile Navigation Menu</VisuallyHidden>
+                    </SheetTitle>
                     <Link href="/" className="flex items-center text-xl font-bold text-primary mb-4">
                         <Image
                             src="/images/SlatenChalk@1x.svg" // Use the same logo
@@ -93,7 +98,7 @@ export function ClientNavLinks({ isAdmin, isLoggedIn, pathname }: ClientNavLinks
                                 <SheetTrigger key={item.href} asChild>
                                     <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1 text-accent">
                                         {/* Render the icon if available */}
-                                        {item.icon && <item.icon className="mr-2 h-4 w-4" />}
+                                        {item.icon && <item.icon className="mr-2 h-4 w-4" />} {/* Render the icon if available */}
                                         {item.label}
                                     </NavLink>
                                 </SheetTrigger>
