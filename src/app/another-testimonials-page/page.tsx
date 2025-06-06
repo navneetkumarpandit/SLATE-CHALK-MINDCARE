@@ -15,42 +15,42 @@ const AnotherTestimonialsPage: React.FC = () => {
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
           <p className="text-sm mb-2">⭐⭐⭐⭐⭐</p>
           <p className="italic mb-4 text-lg">"This service was life-changing! Highly recommend."</p>
-          <p className="font-semibold">- Satisfied Client A</p>
+          <p className="font-semibold">- Navneet Kumar</p>
         </div>
 
         {/* Testimonial Card 2 */}
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
-          <p className="text-sm mb-2">⭐⭐⭐⭐⭒</p> {/* Using '⭒' for half-star */}
+          <p className="text-sm mb-2">⭐⭐⭐⭐⭐⭒</p> {/* Using '⭒' for half-star */}
           <p className="italic mb-4 text-lg">"Professional and compassionate. A great experience."</p>
-          <p className="font-semibold">- Happy Customer B</p>
+          <p className="font-semibold">- Ravi Pandey B</p>
         </div>
 
         {/* Testimonial Card 3 */}
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
           <p className="text-sm mb-2">⭐⭐⭐⭐⭐</p>
           <p className="italic mb-4 text-lg">"Exceeded my expectations. Will definitely use again."</p>
-          <p className="font-semibold">- Grateful User C</p>
+          <p className="font-semibold">- Aman Dwivedi</p>
         </div>
 
         {/* Testimonial Card 4 */}
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
           <p className="text-sm mb-2">⭐⭐⭐⭐</p>
           <p className="italic mb-4 text-lg">"Very helpful and insightful. Thank you!"</p>
-          <p className="font-semibold">- Appreciative Person D</p>
+          <p className="font-semibold">- Lavina </p>
         </div>
 
         {/* Testimonial Card 5 */}
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
           <p className="text-sm mb-2">⭐⭐⭐⭐⭐</p>
           <p className="italic mb-4 text-lg">"A positive and supportive environment."</p>
-          <p className="font-semibold">- Encouraged Individual E</p>
+          <p className="font-semibold">- Rohit singh</p>
         </div>
 
         {/* Testimonial Card 6 - Adding another one for variety */}
         <div className="bg-purple-100 text-purple-900 p-6 rounded-lg shadow-lg">
           <p className="text-sm mb-2">⭐⭐⭐⭐</p>
           <p className="italic mb-4 text-lg">"Helped me gain clarity and confidence."</p>
-          <p className="font-semibold">- Motivated Client F</p>
+          <p className="font-semibold">- Pooja Kumari</p>
         </div>
       </div>
     </main>

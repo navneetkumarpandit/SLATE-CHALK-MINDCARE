@@ -34,14 +34,24 @@ async function getSmtpConfiguration(): Promise<SmtpSettings | undefined> {
     const API_BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:9002';
     const response = await fetch(`${API_BASE_URL}/api/settings`, { cache: 'no-store' });
     if (response.ok) {
+ console.log('Successfully fetched settings from API.');
       const settings: AppSettings = await response.json();
       if (settings.smtpSettings && settings.smtpSettings.host) { // Check if host is configured as a sign of setup
+ console.log('SMTP settings found in fetched settings.');
+        // Log SMTP settings without the password
+        const loggedSmtpSettings = { ...settings.smtpSettings, pass: '********' };
+        console.log('Fetched SMTP Settings (password masked):', loggedSmtpSettings);
         return settings.smtpSettings;
+      } else {
+ console.warn('SMTP settings not found or incomplete in fetched settings.');
       }
+    } else {
+ console.error(`Failed to fetch settings from ${API_BASE_URL}/api/settings. Status: ${response.status}`);
     }
   } catch (error) {
     console.error("Failed to fetch SMTP settings for contact form:", error);
   }
+  console.warn('getSmtpConfiguration returning undefined (no valid SMTP settings found).');
   return undefined;
 }
 
@@ -105,6 +115,7 @@ export async function sendContactEmailAction(
         `,
       };
 
+ console.log('Attempting to send email to admin...');
       // Send email to the site owner
       const infoAdmin = await transporter.sendMail(mailOptionsToAdmin);
       console.log('Message sent to admin: %s', infoAdmin.messageId);
@@ -124,6 +135,7 @@ export async function sendContactEmailAction(
         `,
       };
 
+ console.log('Attempting to send confirmation email to user...');
       const infoUser = await transporter.sendMail(mailOptionsToUser);
       console.log('Confirmation message sent to user: %s', infoUser.messageId);
 
