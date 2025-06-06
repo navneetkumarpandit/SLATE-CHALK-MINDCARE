@@ -1,6 +1,5 @@
 // src/components/layout/ClientNavLinks.tsx
 'use client';
-
 import Link from 'next/link';
 import { NavLink } from './NavLink';
 import { Button } from '@/components/ui/button';
@@ -96,8 +95,8 @@ export function ClientNavLinks({ isAdmin, isLoggedIn, pathname }: ClientNavLinks
                             <span className="text-sm font-semibold text-muted-foreground px-2">Admin Menu</span>
                             {adminNavItems.map(item => (
                                 <SheetTrigger key={item.href} asChild>
-                                    <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1 text-accent">
-                                        {/* Render the icon if available */}
+                                    <NavLink href={item.href} className="text-lg text-left justify-start w-full px-2 py-1 text-accent" initialPathname={pathname}>
+                                       initialPathname={pathname} {/* Render the icon if available */}
                                         {item.icon && <item.icon className="mr-2 h-4 w-4" />} {/* Render the icon if available */}
                                         {item.label}
                                     </NavLink>
