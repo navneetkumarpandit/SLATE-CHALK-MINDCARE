@@ -54,7 +54,6 @@ export interface SmtpSettings {
   port: number;
   user: string;
   pass: string; // Sensitive: Store securely in a real application
-  secure: boolean; // true for SSL/TLS
   fromEmail?: string; // Optional: email address to send from
 }
 

@@ -84,7 +84,7 @@ export async function sendContactEmailAction(
       const transporter = nodemailer.createTransport({
         host: smtpConfig.host,
         port: smtpConfig.port,
-        secure: smtpConfig.secure, // true for 465, false for other ports
+        secure: smtpConfig.secure,
         auth: {
           user: smtpConfig.user,
           pass: smtpConfig.pass,
@@ -111,7 +111,7 @@ export async function sendContactEmailAction(
 
       // Send confirmation email to the user
       const mailOptionsToUser = {
-        from: `Slate & Chalk MindCare <${smtpConfig.fromEmail || DEFAULT_FROM_EMAIL_ADDRESS}>`, // Use a more friendly 'from' for the user
+        from: `SlateNchalk Mindcare <${smtpConfig.fromEmail || DEFAULT_FROM_EMAIL_ADDRESS}>`, // Use a more friendly 'from' for the user
         to: email,
         subject: 'Thank you for contacting Slate & Chalk MindCare',
         text: `Hi ${name},\n\nThank you for reaching out to us. We have received your message and will get back to you as soon as possible.\n\nYour message:\n"${message}"\n\nBest regards,\nThe Slate & Chalk MindCare Team`,
